@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDUvibe — الملف الشخصي</title>
+    <meta name="description" content="صفحة الملف الشخصي - EDUvibe">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+
+    <!-- Loading Overlay -->
+    <div class="profile-loading" id="profileLoading">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Top Bar -->
+    <nav class="profile-topbar">
+        <a href="index.html" class="profile-topbar-logo">
+            EDU<span>vibe</span>
+        </a>
+        <a href="index.html" class="profile-topbar-back">
+            <i class="fa fa-arrow-right"></i> الرجوع للرئيسية
+        </a>
+    </nav>
+
+    <!-- Profile Header -->
+    <header class="profile-header">
+        <div class="profile-avatar-wrap">
+            <div class="profile-avatar" id="avatarDisplay"></div>
+            <label class="profile-avatar-edit" for="avatarInput" title="تغيير الصورة">
+                <i class="fa fa-camera"></i>
+            </label>
+            <input type="file" id="avatarInput" class="profile-avatar-input" accept="image/*">
+        </div>
+        <h1 class="profile-header-name" id="headerName">...</h1>
+        <p class="profile-header-email" id="headerEmail">...</p>
+    </header>
+
+    <!-- Content -->
+    <main class="profile-content">
+
+        <!-- Personal Info Card -->
+        <section class="profile-card">
+            <h2 class="profile-card-title"><i class="fa fa-user"></i> المعلومات الشخصية</h2>
+
+            <div class="pf-field" id="nameField">
+                <label class="pf-label">الاسم بالكامل</label>
+                <input type="text" class="pf-input" id="pfName" placeholder="اكتب اسمك الكامل">
+                <div class="pf-error">الاسم مطلوب</div>
+            </div>
+
+            <div class="pf-field">
+                <label class="pf-label">البريد الإلكتروني</label>
+                <input type="email" class="pf-input pf-input-readonly" id="pfEmail" disabled>
+            </div>
+
+            <div class="pf-field">
+                <label class="pf-label">الجامعة</label>
+                <input type="text" class="pf-input" id="pfUniversity" placeholder="مثال: جامعة عين شمس">
+            </div>
+
+            <div class="pf-field">
+                <label class="pf-label">مجال الاهتمام</label>
+                <select class="pf-input" id="pfInterest">
+                    <option value="">— اختر مجال —</option>
+                    <option value="web">Web & App Development</option>
+                    <option value="ai">AI & Data Science</option>
+                    <option value="security">Cybersecurity</option>
+                    <option value="design">UI/UX Design</option>
+                    <option value="marketing">Marketing & Media</option>
+                    <option value="business">Business & Finance</option>
+                    <option value="engineering">Engineering</option>
+                    <option value="bio">Biological Sciences</option>
+                    <option value="volunteer">Volunteering</option>
+                    <option value="other">أخرى</option>
+                </select>
+            </div>
+
+            <!-- Hidden photo URL field -->
+            <input type="hidden" id="pfPhotoUrl">
+        </section>
+
+        <!-- Save Button Card -->
+        <section class="profile-card">
+            <button class="pf-save-btn" id="saveBtn">
+                <i class="fa fa-check"></i> حفظ التغييرات
+            </button>
+        </section>
+
+        <!-- Logout Card -->
+        <section class="profile-card" style="border: none; box-shadow: none; background: transparent; padding: 0;">
+            <button class="pf-logout-btn" id="logoutBtn">
+                <i class="fa fa-sign-out-alt"></i> تسجيل الخروج
+            </button>
+        </section>
+
+    </main>
+
+    <!-- Toast Notification -->
+    <div class="pf-toast" id="pfToast"></div>
+
+    <!-- Profile JS -->
+    <script type="module" src="profile.js"></script>
+
+</body>
+</html>
